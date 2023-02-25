@@ -2,47 +2,116 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-</head>
+<!-- <style>
+  .widget-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp, .call {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.whatsapp {
+  background-color: #25d366;
+}
+
+.call {
+  background-color: #0d6efd;
+}
+
+</style> -->
+
+  </head>
 
 <body>
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                </ol>
-      
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">            
-      
-                  <div class="item active">
-                       <div align="center">
-                         <video autoplay loop>
-                           <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
-                           Your browser does not support the video tag.
-                        </video>
-                    </div>
-                       <div class="carousel-caption">
-                        <h3>hello</h3>
-                        <p>hello</p>
-                      </div>
-                    </div> 
-                      <div class="item">
-                    <img src="http://dummyimage.com/1024x552/000/fff" class="img-responsive" alt="asfds">
-                    <div class="carousel-caption">
-                        <h3>hello</h3>
-                        <p>hello.</p>
-                      </div>
-                  </div>
-                    <a class="left carousel-control" href="#carouselHelp" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carouselHelp" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-      </div>
+  <!-- <div class="widget-container">
+    <a href="https://wa.me/1234567890" target="_blank" class="whatsapp">
+      <i class="fa fa-whatsapp"></i>
+    </a>
+    <a href="tel:1234567890" class="call">
+      <i class="fa fa-phone"></i>
+    </a>
+  </div> -->
+
+
+  <script>
+    const widgetContainer = document.createElement('div');
+widgetContainer.classList.add('widget-container');
+
+const whatsappLink = document.createElement('a');
+whatsappLink.href = 'https://wa.me/917448698099';
+whatsappLink.target = '_blank';
+whatsappLink.classList.add('whatsapp');
+
+const whatsappIcon = document.createElement('i');
+whatsappIcon.classList.add('fa', 'fa-whatsapp');
+whatsappLink.appendChild(whatsappIcon);
+
+const callLink = document.createElement('a');
+callLink.href = 'tel:7448698099';
+callLink.classList.add('call');
+
+const callIcon = document.createElement('i');
+callIcon.classList.add('fa', 'fa-phone');
+callLink.appendChild(callIcon);
+
+widgetContainer.appendChild(whatsappLink);
+widgetContainer.appendChild(callLink);
+
+document.body.appendChild(widgetContainer);
+
+const css = `
+  .widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .whatsapp, .call {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .whatsapp {
+    background-color: #25d366;
+  }
+
+  .call {
+    background-color: #0d6efd;
+  }
+`;
+
+const style = document.createElement('style');
+style.innerHTML = css;
+
+document.head.appendChild(style);
+  </script>
+  
 </body>
 
 </html>
